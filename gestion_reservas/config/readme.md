@@ -55,7 +55,7 @@ Si aún no tienes PostgreSQL instalado, sigue los pasos en la documentación ofi
 
 En el archivo settings.py de tu proyecto Django, configura la base de datos PostgreSQL con los datos creados anteriormente:
 
-    ```bash
+    
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -73,7 +73,7 @@ En el archivo settings.py de tu proyecto Django, configura la base de datos Post
 
 Ejecuta las migraciones para configurar las tablas de la base de datos:
 
-    ```bash
+    
     python3 manage.py makemigrations
     python3 manage.py migrate
 
@@ -88,7 +88,7 @@ Para ejecutar el servidor de desarrollo de Django, usa el siguiente comando:
 
 Este proyecto utiliza las siguientes dependencias. Puedes verlas en el archivo requirements.txt y instalarlas con pip:
 
-    ```bash
+    
     asgiref==3.8.1
     beautifulsoup4==4.12.3
     crispy-bootstrap5==2024.10
@@ -102,7 +102,7 @@ Este proyecto utiliza las siguientes dependencias. Puedes verlas en el archivo r
 
 Se pueden instalar todas las dependencias usando el archivo requirements.txt, usando el siguinete comando:
 
-    ```bash
+    
     pip install -r requirements.txt
 
 
