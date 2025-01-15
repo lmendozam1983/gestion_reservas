@@ -2,9 +2,9 @@
 {% load bootstrap5 %}
 {% block content %}
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark">cc
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+        <a class="navbar-brand text-white fw-bold" href="{% url 'index' %}">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,18 +12,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'lista_salas' %}">Lista de salas</a>
+                    <a class="nav-link active text-white" aria-current="page" href="{% url 'lista_salas' %}">Lista de salas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'agregar_salas' %}">Agregar Salas</a>
+                    <a class="nav-link text-white" href="{% url 'agregar_salas' %}">Agregar Salas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'agregar_reserva' %}">Realizar Reserva</a>
+                    <a class="nav-link text-white" href="{% url 'agregar_reserva' %}">Realizar Reserva</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'reservas' %}">Reservas</a>
+                    <a class="nav-link text-white" href="{% url 'reservas' %}">Reservas</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Dropdown
@@ -36,15 +36,15 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                </li>
+                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <a class="nav-link active text-white" href="/admin/">Admin</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <form class="d-flex" role="search" action="https://www.google.com/search" method="get" target="_blank">
+                <input class="form-control me-2" type="search"  placeholder="Buscar con Google" aria-label="Search">
+                <button class="btn btn-outline-success text-white ms-2" type="submit">Ir</button>
+                <span class="nav-item dropdown text-white ms-auto">
         </div>
     </div>
 </nav>

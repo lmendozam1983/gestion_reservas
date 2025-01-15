@@ -29,7 +29,7 @@ def editar_sala(request,pk):
         form = SalaForm(request.POST, instance=sala)
         if form.is_valid():
             form.save()
-            return redirect('/salas')
+            return redirect('lista_salas')
     else:
         form = SalaForm(instance=sala)
         context = {'form': form}
@@ -66,9 +66,11 @@ def editar_reserva(request,pk):
         if form.is_valid():
             form.save()
             return redirect('reservas')
+        else:
+            context = {'form': form, 'reserva': reserva}
     else:
         form = ReservaForm(instance=reserva)
-        context = {'form': form}
+        context = {'form': form, 'reserva': reserva}
     return render(request, 'editar_reserva.html',context)
 
 def eliminar_reserva(request, reserva_pk):
