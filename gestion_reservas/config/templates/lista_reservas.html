@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include "menu.html" %}
+<div class="container">
+    <h1>Reservas</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sala</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Inicio</th>
+            <th scope="col">Fin</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+        </thead>
+    {%for reserva in reservas %}
+        <tbody>
+                <tr>
+                  <th scope="row">{{reserva.id}}</th>
+                  <td>{{reserva.sala}}</td>
+                  <td>{{reserva.nombre_cliente}}</td>
+                  <td>{{reserva.hora_inicio}}</td>
+                  <td>{{reserva.hora_termino}}</td>
+                  <td>{{reserva.estado}}</td>
+                  <td><a href="{% url 'editar_reserva' pk=reserva.id %}">Editar</a></td>
+                  <td><a href="{% url 'eliminar_reserva' reserva_pk=reserva.pk %}" class="card-link text-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta sala?');">Eliminar</a></td>
+                </tr>
+        </tbody>
+    {%endfor%}
+    </table>
+    <a href="agregar_reserva">Nueva reserva</a>
+
+{% endblock %}
+</div>

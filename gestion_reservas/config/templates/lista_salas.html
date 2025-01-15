@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% include "menu.html" %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Capacidad</th>
+                <th scope="col">Ubicacion</th>
+                <th scope="col">Equipamiento</th>
+                <th scope="col">Disponibilidad</th>
+                <th scope="col">Detalle</th>
+            </tr>
+        </thead>
+        {%for sala in salas %}
+        <tbody>
+            <tr>
+                <th scope="row">{{sala.id}}</th>
+                <td>{{sala.nombre}}</td>
+                <td>{{sala.capacidad}}</td>
+                <td>{{sala.ubicacion}}</td>
+                <td>{{sala.equipamiento}}</td>
+                <td>{{sala.disponibilidad}}</td>
+                <td><a href="{% url 'detalle_sala' sala.id %}">Detalle</a></td>
+            </tr>
+        </tbody>
+        {%endfor%}
+    </table>
+    <a href="{% url 'agregar_salas' %}">Nueva sala</a>
+
+    {% endblock %}
+</body>
+
+</html>

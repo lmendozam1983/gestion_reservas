@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load bootstrap5 %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% include "menu.html" %}
+    
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{sala.nombre}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{sala.equipamiento}}</h6>
+                <p class="card-text">{{sala.ubicacion}}</p>
+                <a href="{% url 'editar_sala' pk=sala.id %}" class="card-link text-success">Editar</a>
+                <a href="{% url 'eliminar_sala' pk=sala.id %}" class="card-link text-danger"  onclick="return confirm('¿Estás seguro de que deseas eliminar esta sala?');">Eliminar</a>
+
+            </div>
+          </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>
