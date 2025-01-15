@@ -17,6 +17,7 @@ Este proyecto permite la gestión de reservas de salas en un entorno educativo o
 2. **Crear y Activar el Entorno Virtual**
 
 En el directorio del proyecto, crea un entorno virtual para evitar conflictos con las dependencias del sistema:
+
     ```bash
     python3 -m venv venv
     source venv/bin/activate  # En Windows usa: venv\Scripts\activate
