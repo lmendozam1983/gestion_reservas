@@ -16,51 +16,58 @@ Este proyecto permite la gestión de reservas de salas en un entorno educativo o
 
 2. **Crear y Activar el Entorno Virtual**
 
-En el directorio del proyecto, crea un entorno virtual para evitar conflictos con las dependencias del sistema:
+    En el directorio del proyecto, crea un entorno virtual para evitar conflictos con las dependencias del sistema:
 
     ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # En Windows usa: venv\Scripts\activate
+    mkvirtualenv gestion_reservas
+    workon gestion_reservas
 
-Instalar las Dependencias
+3.  **Instalar las Dependencias**
 
-Instala las dependencias del proyecto desde el archivo requirements.txt:
-pip install -r requirements.txt
+    Instala las dependencias del proyecto desde el archivo requirements.txt:
 
-Instalar PostgreSQL
+    ```bash
+    pip install -r requirements.txt
+
+## Instalar PostgreSQL
 
 Si aún no tienes PostgreSQL instalado, sigue los pasos en la documentación oficial de PostgreSQL para instalarlo en tu sistema operativo.
 
-Configurar la Base de Datos
+## Configurar la Base de Datos
 
-Crea una base de datos para el proyecto. Abre la terminal de PostgreSQL:
-sudo -u postgres psql
+1.  Crea una base de datos para el proyecto. Abre la terminal de PostgreSQL:
 
-Luego, ejecuta los siguientes comandos para crear una base de datos y un usuario:
+     ```bash
+    sudo -u postgres psql
 
-CREATE DATABASE gestion_reservas;
-CREATE USER gestor WITH PASSWORD 'tu_contraseña';
-ALTER ROLE gestor SET client_encoding TO 'utf8';
-ALTER ROLE gestor SET default_transaction_isolation TO 'read committed';
-ALTER ROLE gestor SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE gestion_reservas TO gestor;
-\q
+2.  Luego, ejecuta los siguientes comandos para crear una base de datos y un usuario:
 
-Configurar el archivo settings.py en Django
+     ```bash    
+    CREATE DATABASE gestion_reservas;
+    CREATE USER gestor WITH PASSWORD 'tu_contraseña';
+    ALTER ROLE gestor SET client_encoding TO 'utf8';
+    ALTER ROLE gestor SET default_transaction_isolation TO 'read committed';
+    ALTER ROLE gestor SET timezone TO 'UTC';
+    GRANT ALL PRIVILEGES ON DATABASE gestion_reservas TO gestor;
+    \q
+
+3.  Configurar el archivo **settings.py** en Django
 
 En el archivo settings.py de tu proyecto Django, configura la base de datos PostgreSQL con los datos creados anteriormente:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gestion_reservas',
-        'USER': 'gestor',
-        'PASSWORD': 'tu_contraseña',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
 
-Instrucciones para Ejecutar el Proyecto y Cargar Datos Iniciales
+     ```bash
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'gestion_reservas',
+            'USER': 'gestor',
+            'PASSWORD': 'tu_contraseña',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
+## Instrucciones para Ejecutar el Proyecto y Cargar Datos Iniciales
 Migrar la Base de Datos
 
 Ejecuta las migraciones para configurar las tablas de la base de datos:
