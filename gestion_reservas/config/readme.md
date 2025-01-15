@@ -14,7 +14,7 @@ Este proyecto permite la gestión de reservas de salas en un entorno educativo o
    git clone https://github.com/lmendozam1983/gestion_reservas.git
    cd gestion_reservas
 
-Crear y Activar el Entorno Virtual
+2. **Crear y Activar el Entorno Virtual**
 
 En el directorio del proyecto, crea un entorno virtual para evitar conflictos con las dependencias del sistema:
 python3 -m venv venv
@@ -84,4 +84,13 @@ otras dependencias que puedas estar utilizando
 Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
+
+### 2. Archivo `requirements.txt`
+
+Este archivo debe incluir todas las dependencias necesarias para que tu proyecto funcione correctamente. Aquí tienes un ejemplo básico:
+
+```txt
+Django==3.2
+psycopg2==2.9.3
+djangorestframework==3.12.4
 
