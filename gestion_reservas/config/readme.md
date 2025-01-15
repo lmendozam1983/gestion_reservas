@@ -68,38 +68,48 @@ En el archivo settings.py de tu proyecto Django, configura la base de datos Post
     }
 
 ## Instrucciones para Ejecutar el Proyecto y Cargar Datos Iniciales
-Migrar la Base de Datos
+
+1.  Migrar la Base de Datos
 
 Ejecuta las migraciones para configurar las tablas de la base de datos:
-python manage.py migrate
 
-Cargar Datos Iniciales (Opcional)
+     ```bash
+    python3 manage.py makemigrations
+    python3 manage.py migrate
 
-Si deseas cargar datos iniciales, por ejemplo, para crear algunas salas de ejemplo, puedes utilizar un archivo de fixtures o crear las entradas desde el panel de administración de Django. Para cargar un archivo de fixtures:
-python manage.py loaddata fixtures/archivo_de_datos_iniciales.json
-
-Ejecutar el Servidor de Desarrollo
+2.  Ejecutar el Servidor de Desarrollo
 
 Para ejecutar el servidor de desarrollo de Django, usa el siguiente comando:
-python manage.py runserver
 
-Dependencias del Proyecto
+    
+    python manage.py runserver
+
+## Dependencias del Proyecto
+
 Este proyecto utiliza las siguientes dependencias. Puedes verlas en el archivo requirements.txt y instalarlas con pip:
 
-Django==3.2
-psycopg2==2.9.3
-djangorestframework==3.12.4
-otras dependencias que puedas estar utilizando
-Licencia
+     ```bash
+    asgiref==3.8.1
+    beautifulsoup4==4.12.3
+    crispy-bootstrap5==2024.10
+    Django==4.2.18
+    django-bootstrap-v5==1.0.11
+    django-crispy-forms==2.3
+    psycopg==3.2.3
+    soupsieve==2.6
+    sqlparse==0.5.3
+    typing_extensions==4.12.2
+
+Se pueden instalar todas las dependencias usando el archivo requirements.txt, usando el siguinete comando:
+
+     ```bash
+    pip install -r requirements.txt
+
+
+## Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
+## Creado por LMM.
 
-### 2. Archivo `requirements.txt`
 
-Este archivo debe incluir todas las dependencias necesarias para que tu proyecto funcione correctamente. Aquí tienes un ejemplo básico:
-
-```txt
-Django==3.2
-psycopg2==2.9.3
-djangorestframework==3.12.4
 
