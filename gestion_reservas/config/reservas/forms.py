@@ -1,5 +1,6 @@
 from django import forms
 from .models import SalaModel, ReservaModel
+from django.core.exceptions import ValidationError
 
 class SalaForm(forms.ModelForm):
     class Meta:
@@ -12,10 +13,6 @@ class SalaForm(forms.ModelForm):
             'equipamiento': forms.TextInput(attrs={'class':'form-control'}),
         }
         
-from django import forms
-from django.core.exceptions import ValidationError
-from .models import ReservaModel
-
 class ReservaForm(forms.ModelForm):
     class Meta:
         model = ReservaModel
